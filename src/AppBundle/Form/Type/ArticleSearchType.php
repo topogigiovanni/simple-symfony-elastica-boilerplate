@@ -31,7 +31,6 @@ class ArticleSearchType extends AbstractType
                 'choices' => array('false'=>'non','true'=>'oui'),
                 'required' => false,
             ))
-            ->add('search', ButtonType::class)
         ;
     }
 

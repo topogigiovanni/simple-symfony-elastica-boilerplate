@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Search articles</title>
 </head>
 <body>
 
 <section>
 {{ form_start(form, {'attr': {'class': 'my-form-class'} }) }}
     {{ form_widget(form) }}
-    <button type="submit">enviarrr</button>
+    <button type="submit">send</button>
 {{ form_end(form) }}
+<br>
+Resultados: {{results | length}}
 </section>
-
-{{results | json_encode}}
 
 </body>
 </html>
