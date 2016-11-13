@@ -13,22 +13,10 @@
     </div>
 {% endfor %}
 </div>
-
 {{ form_start(form, {'attr': {'class': 'my-form-class'} }) }}
     {{ form_widget(form) }}
     <button type="submit">send</button>
 {{ form_end(form) }}
-<br>
-Resultados: {{results | length}}
-<div>
-	<ul>
-		{% for item in results %}
-		<li>
-			Title: {{ item.title }}
-		</li>
-		{% endfor %}	
-	</ul>
-</div>
 </section>
 
 </body>
