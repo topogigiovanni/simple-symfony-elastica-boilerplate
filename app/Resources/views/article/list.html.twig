@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<section>
+{{ form_start(form, {'attr': {'class': 'my-form-class'} }) }}
+    {{ form_widget(form) }}
+    <button type="submit">enviarrr</button>
+{{ form_end(form) }}
+</section>
+
+{{results | json_encode}}
+
+</body>
+</html>
