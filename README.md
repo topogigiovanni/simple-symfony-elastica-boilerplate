@@ -1,7 +1,7 @@
 Simple Symfony Elastica Boilerplate
 ========================
 
-It's a simple boilerplate containing the Symfony Standard Edition more the FOSElasticaBundle configurated
+It's a simple boilerplate containing the Symfony Standard Edition and FOSElasticaBundle configured
 
 For details on how to download and get started, see the
 [Symfony Installation][1] chapter of the Symfony Documentation.
