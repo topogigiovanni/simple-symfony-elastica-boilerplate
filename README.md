@@ -4,8 +4,7 @@ Simple Symfony Elastica Boilerplate
 It's a simple boilerplate containing the Symfony Standard Edition and FOSElasticaBundle configured
 
 For details on how to download and get started, see the
-[Symfony Installation][1] chapter of the Symfony Documentation.
-[Elasticsearch/Elastica Installation][15] chapter of the Elasticsearch/Elastica Installation
+[Symfony Installation][1] chapter of the Symfony Documentation and them [Elasticsearch/Elastica Installation][15] chapter of the Elasticsearch/Elastica Installation
 
 What's inside?
 --------------
@@ -71,4 +70,3 @@ Enjoy!
 [13]: https://symfony.com/doc/3.0/bundles/SensioGeneratorBundle
 [14]: https://github.com/FriendsOfSymfony/FOSElasticaBundle
 [15]: http://obtao.com/blog/2014/02/indexing-and-simple-search-with-elasticsearch-and-symfony/
-/index.html
