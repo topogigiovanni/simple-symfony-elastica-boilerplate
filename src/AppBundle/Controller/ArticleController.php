@@ -93,10 +93,10 @@ class ArticleController extends Controller
 
     }
 
-     /**
+    /**
      * @Route("/edit/{id}", name="article_edit")
      */
-    public function editAction(Article $article)
+    public function editAction(Article $article, Request $request)
     {
 
         $articleSearchForm = $this->get('form.factory')
@@ -106,17 +106,21 @@ class ArticleController extends Controller
                 $article,
                 array(
                     //'action' => $this->generateUrl('obtao-article-search'),
-                    'action' => $this->generateUrl('article_create'),
+                    'action' => $this->generateUrl('article_edit', array('id' => $article->getId())),
                     'method' => 'POST'
                 )
-            );        
+            ); 
+
+
+        $articleSearchForm->handleRequest($request);       
         
         if ($articleSearchForm->isSubmitted() && $articleSearchForm->isValid()) {
+        	
         	$article = $articleSearchForm->getData();
 	        $em = $this->getDoctrine()->getManager();
 
-	        $em->persist($article);
-	        $em->flush();
+	        $em->merge($article);
+			$em->flush();
 
 	        $this->addFlash(
 	            'success',
@@ -127,6 +131,34 @@ class ArticleController extends Controller
         return $this->render('article/save.html.twig',array(
             'form' => $articleSearchForm->createView(),
         ));
+
+    }
+
+    /**
+     * @Route("/delete/{id}", name="article_delete")
+     */
+    public function deleteAction(Article $article, Request $request)
+    {
+      
+        
+        if (!is_null($article)) {
+        	
+	        $em = $this->getDoctrine()->getManager();
+
+	        $em->remove($article);
+	        $em->flush();
+
+	        $this->addFlash(
+	            'success',
+	            'Deleted!'
+	        );
+
+        }
+
+        return $this->redirectToRoute('article_search', [
+		    'request' => $request
+		], 301);
+
 
     }
 }

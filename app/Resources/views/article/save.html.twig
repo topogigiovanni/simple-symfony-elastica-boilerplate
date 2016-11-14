@@ -14,6 +14,8 @@
 {% endfor %}
 </div>
 {{ form_start(form, {'attr': {'class': 'my-form-class'} }) }}
+	{{ form_errors(form) }}
+	
     {{ form_widget(form) }}
     <button type="submit">send</button>
 {{ form_end(form) }}
